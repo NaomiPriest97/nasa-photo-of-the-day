@@ -3,29 +3,31 @@ import axios from "axios";
 import NasaCard from "./NasaCard";
 
 export default function NasaList(){
-    const [images, setImages] = useState([]);
+    const [nasa, setNasa] = useState([]);
 
     useEffect(() => {
-        axios.get( "https://api.nasa.gov/planetary/apod?api_key=9d1VVowdM3TEheS5vbJWwTCvrnconxVTdSBUiUfG")
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=GXzowfsVTghFeaKRFbpgHgBfFpOwABoQuOjlElV3`)
         .then(response => {
-            console.log(response.data);
-           setImages(response.data);
+            console.log(response);
+           setNasa([response.data]);
         })
-        .catch(error => [console.log("the data was not returned", error)
-    ]);
+        .catch(error => {console.log("the data was not returned", error)});
+            
     }, []);
 
     return (
         <div className = "imgs">
-            {images.map(image => {
+            {nasa.map(image => {
                 return (
                     <NasaCard 
                     title = {image.title}
+                    key = {image.id}
                     image = {image.hdurl}
                     date = {image.date}
                     explanation = {image.explanation}
                     />
-                )
+                    
+                );
             })}
         </div>
     );
