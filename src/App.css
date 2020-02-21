@@ -32,28 +32,4 @@
   }
 }
 
-img{
-  width:70%;
-  border-radius:2px;
-  margin:20px;
-}
 
-.img-list{
-  background-color:#C0C0C0;
-  width:90%;
-  margin: 50px;
-  
-}
-.title{
-  margin:15px;
-
-}
-.dataanddata{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  margin:20px;
-  margin-bottom: 50px;
-  padding-bottom:40px;
-}
